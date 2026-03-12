@@ -1,0 +1,17 @@
+{
+  "functions": {
+    "api/index.go": {
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/api/index?__pathname=/"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/api/index?__pathname=$1"
+    }
+  ]
+}
