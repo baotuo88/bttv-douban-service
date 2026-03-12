@@ -6,7 +6,6 @@ import (
 	"sync"
 
 	"kerkerker-douban-service/app"
-	"kerkerker-douban-service/internal/config"
 
 	"github.com/rs/zerolog/log"
 )
@@ -20,9 +19,7 @@ var (
 func initialize() {
 	bootstrapErr = nil
 
-	cfg := config.Load()
-
-	application, err := app.New(cfg)
+	application, err := app.NewFromEnv()
 	if err != nil {
 		bootstrapErr = err
 		return
