@@ -25,6 +25,11 @@ type Application struct {
 	metrics *repository.Metrics
 }
 
+// NewFromEnv creates an application by reading configuration from environment.
+func NewFromEnv() (*Application, error) {
+	return New(config.Load())
+}
+
 // New creates a fully initialized application router and dependencies.
 func New(cfg *config.Config) (*Application, error) {
 	gin.SetMode(cfg.GinMode)
