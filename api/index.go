@@ -5,7 +5,7 @@ import (
 	"strings"
 	"sync"
 
-	"kerkerker-douban-service/internal/app"
+	"kerkerker-douban-service/app"
 	"kerkerker-douban-service/internal/config"
 
 	"github.com/rs/zerolog/log"
